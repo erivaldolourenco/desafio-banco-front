@@ -1,3 +1,13 @@
-<p>{{account.accountId}}</p>
-<p>{{account.name}}</p>
-<p>{{account.cpf}}</p>
+
+<mat-card>
+    <h1>SALDO: {{account.balance | currency:'BRL'}}</h1>
+    <h3>Nº Conta: {{account.accountId}}</h3>
+    <h3>Nome titular: {{account.name}}</h3>
+    <h3>CPF: {{account.cpf}}</h3>
+    
+    <button mat-raised-button color="primary" (click)="openDeposit()">Depositar</button>
+    <button mat-raised-button color="accent"(click)="openCashout()" >Sacar</button>
+    <button mat-raised-button color="warn" (click)="openTransfer()">Transferencia</button>
+    <button mat-raised-button (click)="goBack()">Voltar</button>
+</mat-card>
+
