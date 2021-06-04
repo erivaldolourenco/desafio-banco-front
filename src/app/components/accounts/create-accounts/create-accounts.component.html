@@ -1,0 +1,23 @@
+
+
+
+<mat-card class="card">
+<mat-card-title>
+    Nova conta
+</mat-card-title>
+    <form >
+        <mat-form-field>
+            <input matInput placeholder="CPF" [(ngModel)] ="account.cpf" name="cpf">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)] ="account.name" name="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Saldo Inicial (R$)" [(ngModel)] ="account.balance" name="balance">
+        </mat-form-field>
+    </form>
+
+<button mat-flat-button color="primary" (click)="createAccount()">Salvar</button>
+
+<button mat-flat-button color="warn" (click)="cancel()">Cancelar</button>
+</mat-card>
