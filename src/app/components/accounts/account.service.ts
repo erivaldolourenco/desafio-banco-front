@@ -4,6 +4,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Observable } from 'rxjs';
 import { Account } from './account.module'
+import { Balance } from './balance.module'
+import { Transfer } from './transfer.module'
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +25,20 @@ export class AccountService {
       verticalPosition: "top"
     })
   }
-  create(account: Account): Observable<Text> {
-    return this.http.post<Text>(this.baseUrl, account)
+  create(account: Account): Observable<JSON> {
+    return this.http.post<JSON>(this.baseUrl, account)
+  }
+  deposit(deposit: Balance): Observable<Text> {
+    const url = `${this.baseUrl}/deposit`
+    return this.http.post<Text>(url, deposit)
+  }
+  cashout(cashout: Balance): Observable<Text> {
+    const url = `${this.baseUrl}/cashout`
+    return this.http.post<Text>(url, cashout)
+  }
+  transfer(transfer: Transfer): Observable<Text> {
+    const url = `${this.baseUrl}/transfer`
+    return this.http.post<Text>(this.baseUrl, transfer)
   }
 
   listAccounts(): Observable<Account[]>{

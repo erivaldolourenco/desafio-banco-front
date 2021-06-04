@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
 import { AccountService } from '../account.service';
 import { Account } from '../account.module'
 
@@ -20,16 +20,22 @@ export class CreateAccountsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
-  createAccount(){
-    this.accoutService.create(this.account).subscribe(()=>{
 
-      this.accoutService.showMensage('Conta cadastrada')
-      this.router.navigate(['/accounts'])
-    })
-    
+  createAccount() {
+    this.accoutService.create(this.account).subscribe(
+      message => {
+        this.accoutService.showMensage(JSON.stringify(message))
+        this.router.navigate(['/accounts'])
+      },
+      (error) => {
+        error.error.forEach((e: any) => {
+          this.accoutService.showMensage(e.message);
+        }
+        );
+      })
+
   }
-  cancel(): void{
+  cancel(): void {
     this.router.navigate(['/accounts'])
   }
 }

@@ -17,7 +17,7 @@ export class ListAccountsComponent implements OnInit {
   ngOnInit(): void {
     this.accountService.listAccounts().subscribe(accounts =>{
       this.accounts = accounts
-      console.log(this.accounts)
+      // console.log(this.accounts)
     })
   }
 
