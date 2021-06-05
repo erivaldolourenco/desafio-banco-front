@@ -38,7 +38,7 @@ export class InfoAccountsComponent implements OnInit {
 
   openDeposit(): void {
     const dialogRef = this.dialog.open(DepositDialogComponent, {
-      width: '50%',
+      width: '35%',
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -49,7 +49,7 @@ export class InfoAccountsComponent implements OnInit {
 
   openCashout(): void {
     const dialogRef = this.dialog.open(CashoutDialogComponent, {
-      width: '50%',
+      width: '35%',
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -58,7 +58,7 @@ export class InfoAccountsComponent implements OnInit {
   }
   openTransfer(): void {
     const dialogRef = this.dialog.open(TransferDialogComponent, {
-      width: '50%',
+      width: '35%',
     });
 
     dialogRef.afterClosed().subscribe(result => {

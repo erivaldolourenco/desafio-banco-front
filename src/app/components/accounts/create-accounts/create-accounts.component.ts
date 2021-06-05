@@ -29,7 +29,7 @@ export class CreateAccountsComponent implements OnInit {
       },
       (error) => {
         error.error.forEach((e: any) => {
-          this.accoutService.showMensage(e.message);
+          this.accoutService.showMensage(e.message, true);
         }
         );
       })

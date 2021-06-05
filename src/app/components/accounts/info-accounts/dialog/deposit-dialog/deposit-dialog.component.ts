@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
 export class DepositDialogComponent implements OnInit {
 
   deposit: Balance = {
-    accountId: 1,
-    value: 234234
+    accountId: 0,
+    value: 0
   }
 
   constructor(
@@ -28,15 +28,14 @@ export class DepositDialogComponent implements OnInit {
   doDeposit(): void {
     this.accoutService.deposit(this.deposit).subscribe(
       (message) => {
+
         this.accoutService.showMensage(JSON.stringify(message))
         const url = `/accounts/info/${this.deposit.accountId}`
         this.router.navigate([url])
+        this.dialogRef.close();
       },
       (error) => {
-        error.error.forEach((e: any) => {
-          this.accoutService.showMensage(e.message);
-        }
-        );
+        this.accoutService.showMensage(error.error.message, true);
       }
     )
   }

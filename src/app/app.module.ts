@@ -32,8 +32,9 @@ import {FormsModule} from '@angular/forms'
 import {MatFormFieldModule} from '@angular/material/form-field'
 import {MatInputModule} from '@angular/material/input';
 import { ListAccountsComponent } from './components/accounts/list-accounts/list-accounts.component'
-
-
+import { DepositDialogComponent } from './components/accounts/info-accounts/dialog/deposit-dialog/deposit-dialog.component'
+import { CashoutDialogComponent } from './components/accounts/info-accounts/dialog/cashout-dialog/cashout-dialog.component'
+import { TransferDialogComponent } from './components/accounts/info-accounts/dialog/transfer-dialog/transfer-dialog.component'
 
 @NgModule({
   declarations: [
@@ -42,7 +43,14 @@ import { ListAccountsComponent } from './components/accounts/list-accounts/list-
     FooterComponent,
     NavComponent,
     HomeComponent,
-    AccountsComponent, CreateAccountsComponent, InfoAccountsComponent, ListAccountsComponent
+    AccountsComponent, 
+    CreateAccountsComponent, 
+    InfoAccountsComponent, 
+    ListAccountsComponent,
+    DepositDialogComponent,
+    CashoutDialogComponent,
+    TransferDialogComponent
+
   ],
   imports: [
     BrowserModule,
