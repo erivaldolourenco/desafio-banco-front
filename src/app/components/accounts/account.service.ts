@@ -25,22 +25,22 @@ export class AccountService {
       panelClass: isError ? ['msg-error'] : ['msg-success'] 
     })
   }
-  create(account: Account): Observable<JSON> {
-    return this.http.post<JSON>(this.baseUrl, account)
+  create(account: Account): Observable<any> {
+    return this.http.post<any>(this.baseUrl, account)
   }
-  deposit(deposit: Balance): Observable<JsonPipe> {
+  deposit(deposit: Balance): Observable<any> {
     const url = `${this.baseUrl}/deposit`
-    return this.http.post<JsonPipe>(url, deposit)
+    return this.http.post<any>(url, deposit)
   }
-  cashout(cashout: Balance): Observable<Text> {
+  cashout(cashout: Balance): Observable<any> {
     const url = `${this.baseUrl}/cashout`
-    return this.http.post<Text>(url, cashout)
+    return this.http.post<any>(url, cashout)
   }
-  transfer(transfer: Transfer): Observable<Text> {
+  transfer(transfer: Transfer): Observable<any> {
     console.log(transfer)
     const url = `${this.baseUrl}/transfer`
     console.log(url)
-    return this.http.post<Text>(url, transfer)
+    return this.http.post<any>(url, transfer)
   }
 
   listAccounts(): Observable<Account[]>{

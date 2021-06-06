@@ -28,10 +28,7 @@ export class CreateAccountsComponent implements OnInit {
         this.router.navigate(['/accounts'])
       },
       (error) => {
-        error.error.forEach((e: any) => {
-          this.accoutService.showMensage(e.message, true);
-        }
-        );
+        this.accoutService.showMensage(error.error.message,true);
       })
 
   }
